@@ -29,7 +29,12 @@ export function Navbar({ onOpenMobileFilters }: NavbarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Sync search bar with URL query param if present
   useEffect(() => {
@@ -166,7 +171,7 @@ export function Navbar({ onOpenMobileFilters }: NavbarProps) {
               aria-label="Open shopping cart"
             >
               <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
-              {isHydrated && totalItems > 0 && (
+              {mounted && totalItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-blue-600 text-white font-bold text-[11px] min-w-[20px] h-[20px] px-1 rounded-full flex items-center justify-center border-2 border-white shadow-sm animate-fade-in">
                   {totalItems > 99 ? "99+" : totalItems}
                 </span>
