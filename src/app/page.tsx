@@ -132,7 +132,7 @@ function HomeContent() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 items-start">
       {/* Sidebar on the left (1 column) */}
-      <div className="lg:col-span-1">
+      <div className="lg:col-span-1 lg:sticky lg:top-28">
         <FilterSidebar
           filters={filters}
           onFilterChange={handleFilterChange}

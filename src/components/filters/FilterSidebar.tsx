@@ -32,7 +32,7 @@ export function FilterSidebar({
   };
 
   return (
-    <aside className="w-full">
+    <aside className="w-full sticky top-28">
       <div className="bg-[#0b57a4] text-white rounded-2xl p-6 shadow-md">
         <h2 className="text-xl font-bold tracking-tight mb-5">Filters</h2>
 
